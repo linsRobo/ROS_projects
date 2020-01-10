@@ -24,9 +24,9 @@ def callback(msg):
 
     rospy.loginfo("Received a /cmd_vel message!")
 
-    rospy.loginfo("Linear Components: [%f, %f, %f]"%(msg.linear.x, msg.linear.y)
+    rospy.loginfo("Linear Components: [%f, %f, %f]"%(msg.linear.x, msg.linear.y, msg.linear.z))
 
-    rospy.loginfo("Angular Components: [%f, %f, %f]"%(msg.angular.x, msg.angular.y)
+    rospy.loginfo("Angular Components: [%f, %f, %f]"%(msg.angular.x, msg.angular.y, msg.angular.z))
     if(msg.linear.x == 0.5):
 
         rospy.loginfo("forward")
