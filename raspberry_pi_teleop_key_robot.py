@@ -36,6 +36,7 @@ def callback(msg):
         backward()
     elif(msg.angular.z == -1.0):
         rospy.loginfo("right")
+        right()
     elif(msg.angular.z == 1.0):
         rospy.loginfo("left")
         left()
@@ -61,15 +62,15 @@ def backward():
         GPIO.output(R1,GPIO.LOW) 
         GPIO.output(R2,GPIO.HIGH) 
 def left(): 
-        GPIO.output(L1,GPIO.HIGH) 
-        GPIO.output(L2,GPIO.LOW) 
-        GPIO.output(R1,GPIO.LOW) 
-        GPIO.output(R2,GPIO.HIGH) 
-def right(): 
         GPIO.output(L1,GPIO.LOW) 
         GPIO.output(L2,GPIO.HIGH) 
         GPIO.output(R1,GPIO.HIGH) 
-        GPIO.output(R2,GPIO.LOW)
+        GPIO.output(R2,GPIO.LOW) 
+def right(): 
+        GPIO.output(L1,GPIO.HIGH) 
+        GPIO.output(L2,GPIO.LOW) 
+        GPIO.output(R1,GPIO.LOW) 
+        GPIO.output(R2,GPIO.HIGH)
 def stop_now(): 
         GPIO.output(L1,GPIO.LOW) 
         GPIO.output(L2,GPIO.LOW) 
